@@ -38,33 +38,38 @@ class Second : AppCompatActivity() {
         getBet()
         if(isPressed == false){
             kadsmasdk.spBut.setOnClickListener {
-                if(countBet <= totalBalance!!){
                 if(countBet < 10){
                     Toast.makeText(this, "Your bet should be minimum 10", Toast.LENGTH_SHORT).show()
                 } else {
                     if(totalBalance!= 0){
-                        totalBalance = totalBalance!!.minus(countBet)
-                        kadsmasdk.tvSecBlnce.text = "Your balance : $totalBalance"
-                        totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-                        if(totalBalance!!<0){
-                            totalBalance = 0
+                        if(countBet<=totalBalance!!){
+                            totalBalance = totalBalance!!.minus(countBet)
                             kadsmasdk.tvSecBlnce.text = "Your balance : $totalBalance"
                             totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+
+                            if(totalBalance!!<0){
+                                totalBalance = 0
+                                kadsmasdk.tvSecBlnce.text = "Your balance : $totalBalance"
+                                totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                            }
+                            firstLaucnhImg()
+                        } else {
+                               Toast.makeText(this, "Your balance is lower thant bet", Toast.LENGTH_SHORT).show()
+                              countBet = 0
+                              kadsmasdk.tvBet.text = countBet.toString()
                         }
-                        firstLaucnhImg()
+
                     } else {
                         AlertSecGm.showdialog(this)
                     }
                 }
 
-            } else {
-                    Toast.makeText(this, "Your balance is lower thant bet", Toast.LENGTH_SHORT).show()
-                    countBet = 0
-                    kadsmasdk.tvBet.text = countBet.toString()
             }
+
             }
         }
-    }
+
+
 
 
 
@@ -114,6 +119,7 @@ class Second : AppCompatActivity() {
                 isPressed = true
                 spBut.isClickable = false
                 spBut.alpha = 0.7f
+                plusSec.isClickable = false
                 val losapdpsapsda = img1.rotation + 2
                 img1.rotation = losapdpsapsda
 
@@ -149,6 +155,7 @@ class Second : AppCompatActivity() {
                 isPressed = false
                 spBut.alpha = 1.0f
                 spBut.isClickable = true
+                plusSec.isClickable = true
 
                 gridSec.visibility = View.GONE
                 img1.visibility = View.GONE
