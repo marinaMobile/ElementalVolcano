@@ -67,7 +67,7 @@
         android:id="@+id/txt_prs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press spin and choose and choose bet"
+        android:text="Press spin choose bet value"
         android:textStyle="bold"
         android:textSize="16sp"
         android:fontFamily="@font/open_sans_bold"

@@ -15,7 +15,7 @@ import kotlin.random.Random
 
 class Second : AppCompatActivity() {
     private lateinit var kadsmasdk : ActivitySecondBinding
-    private var countBet = 0
+    private var countBet = 5
     private var isPressed = false
     private lateinit var sharedPreference : SharedPreferences
     private lateinit var totalSharedPref : SharedPreferences
@@ -38,9 +38,6 @@ class Second : AppCompatActivity() {
         getBet()
         if(isPressed == false){
             kadsmasdk.spBut.setOnClickListener {
-                if(countBet < 10){
-                    Toast.makeText(this, "Your bet should be minimum 10", Toast.LENGTH_SHORT).show()
-                } else {
                     if(totalBalance!= 0){
                         if(countBet<=totalBalance!!){
                             totalBalance = totalBalance!!.minus(countBet)
@@ -55,15 +52,13 @@ class Second : AppCompatActivity() {
                             firstLaucnhImg()
                         } else {
                                Toast.makeText(this, "Your balance is lower thant bet", Toast.LENGTH_SHORT).show()
-                              countBet = 0
+                              countBet = 5
                               kadsmasdk.tvBet.text = countBet.toString()
                         }
 
                     } else {
                         AlertSecGm.showdialog(this)
                     }
-                }
-
             }
 
             }
@@ -78,8 +73,8 @@ class Second : AppCompatActivity() {
             if(totalBalance!! > countBet){
                 countBet +=5
                 tvBet.text = countBet.toString()
-                if(countBet == 200){
-                    countBet = 0
+                if(countBet >= 200){
+                    countBet = 5
                     tvBet.text = countBet.toString()
                 }
             } else {
