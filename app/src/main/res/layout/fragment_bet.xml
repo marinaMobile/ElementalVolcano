@@ -195,7 +195,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_add_bet"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,7 +209,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_minus_bet"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -222,6 +222,34 @@
         android:text="- 20" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_all_in_one"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_minus_bet"
+        android:background="@drawable/sasha_btn_custom_game_fortune"
+        android:layout_marginTop="32dp"
+        android:textColor="#F4CEB2"
+        android:textSize="22sp"
+        android:fontFamily="@font/montserrat_black"
+        android:text="super game" />
+
+    <TextView
+        android:id="@+id/tv_helper_all_in_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/montserrat_black"
+        android:text="* all money - one BET:"
+        android:alpha="0.7"
+        android:textColor="#2C2A29"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_all_in_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/lott_btn_confirm"
         android:layout_width="0dp"
         android:text="confirm"
@@ -230,7 +258,7 @@
         android:textColor="#F4CEB2"
         android:background="@drawable/sasha_btn_confirm"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_minus_bet"
+        app:layout_constraintTop_toBottomOf="@id/btn_all_in_one"
         app:layout_constraintStart_toStartOf="@id/guideline_vert_05gt"
         app:layout_constraintEnd_toEndOf="@id/guideline_vert_95gtgtt"
         android:layout_marginTop="32dp" />

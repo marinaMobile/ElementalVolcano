@@ -1,11 +1,13 @@
 package com.sunsetgames.bordersecurit.first
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.sunsetgames.bordersecurit.R
@@ -55,9 +57,7 @@ class BetFragment : Fragment() {
             yyyyy.btnAddBet.setOnClickListener {
                 userBet = userBet + 20
 
-//                val editPref = totalBalanceSP.edit()
-//                editPref.putInt(First.key_bet, userBet)
-//                editPref.apply()
+
 
                 yyyyy.tvUserBet.text = userBet.toString()
             }
@@ -66,9 +66,7 @@ class BetFragment : Fragment() {
                 if (userBet >= 40) {
                     userBet -= 20
 
-//                    val editPref = totalBalanceSP.edit()
-//                    editPref.putInt(First.key_bet, userBet)
-//                    editPref.apply()
+
 
                     yyyyy.tvUserBet.text = userBet.toString()
 
@@ -82,23 +80,13 @@ class BetFragment : Fragment() {
                 }
             }
 
-
+            yyyyy.btnAllInOne.setOnClickListener {
+                userBet = totalBalance
+                yyyyy.tvUserBet.text = userBet.toString()
+            }
 
             yyyyy.lottBtnConfirm.setOnClickListener {
-                if (totalBalance > userBet) {
-
-                    val editPref = totalBalanceSP.edit()
-                    editPref.putInt(First.key_bet, userBet)
-                    editPref.apply()
-                    findNavController().navigate(R.id.action_betFragment_to_gameeFragment)
-                } else {
-                    Snackbar.make(
-                        yyyyy.root,
-                        "Your balance is lower than current BET",
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                }
-
+                initAlertDialog(totalBalanceSP)
 
             }
 
@@ -110,8 +98,40 @@ class BetFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
+    private fun staaartGame(totalBalanceSP: SharedPreferences) {
+        if (totalBalance >= userBet) {
+
+            val editPref = totalBalanceSP.edit()
+            editPref.putInt(First.key_bet, userBet)
+            editPref.apply()
+            findNavController().navigate(R.id.action_betFragment_to_gameeFragment)
+        } else {
+            Snackbar.make(
+                yyyyy.root,
+                "Your balance is lower than current BET",
+                Snackbar.LENGTH_LONG
+            ).show()
+        }
+    }
+
     override fun onDestroy() {
         dddd = null
         super.onDestroy()
+    }
+
+    private fun initAlertDialog(totalBalanceSP: SharedPreferences) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Start Game")
+            .setMessage("Are you ready?")
+            .setPositiveButton("Yes") { _, _ ->
+                staaartGame(totalBalanceSP)
+            }
+            .setNegativeButton("No, exit") { _, _ ->
+                requireActivity().onBackPressed()
+            }
+
+            .setCancelable(true)
+            .create()
+            .show()
     }
 }
