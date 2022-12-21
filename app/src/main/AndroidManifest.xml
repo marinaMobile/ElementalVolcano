@@ -11,6 +11,7 @@
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
+        android:name=".ApplCla"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,23 +19,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElementalVolcano"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
-            android:name=".Third"
+            android:name=".main.ui.Volcano"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".First"
+            android:name=".main.ui.Elemental"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Second"
+            android:name=".third.Third"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".first.First"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".second.Second"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

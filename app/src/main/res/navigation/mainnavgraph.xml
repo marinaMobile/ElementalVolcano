@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/mainnavgraph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainnavgraph"
+    app:startDestination="@id/firstFragment">
 
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.sunsetgames.bordersecurit.main.ui.frag.FirstMainFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_main_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondMainFragment"
+            app:destination="@id/secondMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondMainFragment"
+        android:name="com.sunsetgames.bordersecurit.main.ui.frag.SecondMainFragment"
+        android:label="fragment_second_main"
+        tools:layout="@layout/fragment_second_main" />
 </navigation>
