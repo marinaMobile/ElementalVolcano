@@ -218,6 +218,7 @@
             app:layout_column="2"
             app:layout_row="1"
             app:srcCompat="@drawable/sec_gma_main" />
+
     </androidx.gridlayout.widget.GridLayout>
 
     <com.google.android.material.card.MaterialCardView

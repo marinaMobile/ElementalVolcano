@@ -14,6 +14,7 @@ import com.sunsetgames.bordersecurit.first.First
 import com.sunsetgames.bordersecurit.main.util.GameAdapter
 import com.sunsetgames.bordersecurit.main.util.GameClass
 import com.sunsetgames.bordersecurit.second.Second
+import com.sunsetgames.bordersecurit.second.StartSecScr
 import com.sunsetgames.bordersecurit.third.Third
 
 
@@ -45,7 +46,7 @@ class Volcano : AppCompatActivity() {
             page.setOnClickListener{
                 when (cont) {
                     0 -> startActivity(Intent(this@Volcano, First::class.java))
-                    1 -> startActivity(Intent(this@Volcano, Second::class.java))
+                    1 -> startActivity(Intent(this@Volcano, StartSecScr::class.java))
                     2 -> startActivity(Intent(this@Volcano, Third::class.java))
                 }
             }
