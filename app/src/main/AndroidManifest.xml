@@ -35,6 +35,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".second.WinnersAct"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+<!--        <activity-->
+<!--            android:name=".second.StartSecScr"-->
+<!--            android:exported="false">-->
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+<!--        </activity>-->
+        <activity
             android:name=".third.Third"
             android:exported="false">
             <meta-data
