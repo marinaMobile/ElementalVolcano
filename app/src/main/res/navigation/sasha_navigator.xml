@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sasha_navigator"
+    app:startDestination="@id/balanceFragment">
+
+    <fragment
+        android:id="@+id/balanceFragment"
+        android:name="com.sunsetgames.bordersecurit.first.BalanceFragment"
+        android:label="fragment_balance"
+        tools:layout="@layout/fragment_balance" >
+        <action
+            android:id="@+id/action_balanceFragment_to_betFragment"
+            app:destination="@id/betFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/betFragment"
+        android:name="com.sunsetgames.bordersecurit.first.BetFragment"
+        android:label="fragment_bet"
+        tools:layout="@layout/fragment_bet" >
+        <action
+            android:id="@+id/action_betFragment_to_gameeFragment"
+            app:destination="@id/gameeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameeFragment"
+        android:name="com.sunsetgames.bordersecurit.first.GameeFragment"
+        android:label="fragment_gamee"
+        tools:layout="@layout/fragment_gamee" >
+        <action
+            android:id="@+id/action_gameeFragment_to_restartFragment"
+            app:destination="@id/restartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restartFragment"
+        android:name="com.sunsetgames.bordersecurit.first.RestartFragment"
+        android:label="fragment_restart"
+        tools:layout="@layout/fragment_restart" >
+        <action
+            android:id="@+id/action_restartFragment_to_gameeFragment"
+            app:destination="@id/gameeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/betFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_restartFragment_to_balanceFragment"
+            app:destination="@id/balanceFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/balanceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

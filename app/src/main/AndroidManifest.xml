@@ -35,7 +35,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".second.WinnersAct"
+            android:name=".third.Third"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,15 +45,16 @@
             android:exported="false"/>
 
         <activity
-            android:name=".third.Third"
+            android:name=".second.WinnersAct"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".first.First"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
