@@ -6,17 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".main.ui.Volcano"
     android:background="@drawable/back">
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/balCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="12dp"
+        android:backgroundTint="#82071B"
+        android:layout_margin="32dp">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleBal"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_extra_bold"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:text="Current Balance"/>
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jost_bold"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:layout_margin="8dp"
+                android:text="0"/>
+
+
+        </LinearLayout>
+
+        
+    </androidx.cardview.widget.CardView>
+
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/gamesVP"
         android:layout_width="match_parent"
         android:layout_margin="16dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balCV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/indicator"
         android:layout_height="500dp"
        />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#82071B"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,39 +10,52 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/dice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/dice" />
+        app:lottie_rawRes="@raw/dic" />
 
-    <TextView
-        android:id="@+id/rules"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You win if a 7 or 11 roll, or lose if 2, 3, or 12 roll (known as “craps”). Any other number that rolls becomes the “point” and the point must roll again before a 7 to win."
-        app:layout_constraintTop_toBottomOf="@id/dice"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="32dp"
+        android:backgroundTint="#EECC70"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:fontFamily="@font/opensans_regular"
-        android:layout_margin="16dp"
-        android:padding="16dp"
-        android:textColor="@color/white"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dice">
 
+        <TextView
+            android:id="@+id/rules"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/opensans_extra_bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="You win if a 7 or 11 roll, or lose if 2, 3, or 12 roll (known as “craps”). Any other number that rolls becomes the “point” and the point must roll again before a 7 to win."
+            android:textColor="#82071B"
+            android:textSize="24sp" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/starBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="#82071B"
         android:text="Start game"
-        app:layout_constraintTop_toBottomOf="@id/rules"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#EECC70"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

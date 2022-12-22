@@ -16,6 +16,7 @@ import com.sunsetgames.bordersecurit.main.util.GameClass
 import com.sunsetgames.bordersecurit.second.StartSecScr
 import com.sunsetgames.bordersecurit.sh.ShopActivity
 import com.sunsetgames.bordersecurit.third.Third
+import me.relex.circleindicator.CircleIndicator3
 
 
 class Volcano : AppCompatActivity() {
@@ -33,6 +34,7 @@ class Volcano : AppCompatActivity() {
 
     fun setUpGamesPager() {
         val gamesViewPager: ViewPager2 = findViewById(R.id.gamesVP)
+        val indicator: CircleIndicator3 = findViewById(R.id.indicator)
         gamesViewPager.clipToPadding= false
         gamesViewPager.clipChildren = false
         gamesViewPager.offscreenPageLimit = 3
@@ -54,6 +56,8 @@ class Volcano : AppCompatActivity() {
         }
         gamesViewPager.setPageTransformer(compPageTransf)
         gamesViewPager.adapter = GameAdapter(getGames())
+        indicator.setViewPager(gamesViewPager)
+
 
         gamesViewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
 
