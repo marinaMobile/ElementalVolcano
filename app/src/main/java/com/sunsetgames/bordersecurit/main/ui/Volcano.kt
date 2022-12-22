@@ -13,7 +13,6 @@ import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.first.First
 import com.sunsetgames.bordersecurit.main.util.GameAdapter
 import com.sunsetgames.bordersecurit.main.util.GameClass
-import com.sunsetgames.bordersecurit.second.Second
 import com.sunsetgames.bordersecurit.second.StartSecScr
 import com.sunsetgames.bordersecurit.third.Third
 
@@ -76,19 +75,19 @@ class Volcano : AppCompatActivity() {
 
 
         val first = GameClass()
-        first.name = "First Game"
-        first.category = "First Category"
-        first.poster = R.drawable.roul
+        first.name = "Black Jack"
+        first.category = "Collect 21 points from cards"
+        first.poster = R.drawable.sasha_nice_card_back
 
         val second = GameClass()
-        second.name = "Second Game"
-        second.category = "Second Category"
-        second.poster = R.drawable.roul
+        second.name = "Slot Machine"
+        second.category = "Spin and win"
+        second.poster = R.drawable.sec_gma_main
 
         val third = GameClass()
-        third.name = "Third Game"
-        third.category = "Third Category"
-        third.poster = R.drawable.roul
+        third.name = "Craps"
+        third.category = "Dice Game"
+        third.poster = R.drawable.diceback
 
         games = arrayListOf(first, second, third)
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/third_navi"
+    app:startDestination="@id/startThird">
+
+    <fragment
+        android:id="@+id/startThird"
+        android:name="com.sunsetgames.bordersecurit.third.StartThird"
+        android:label="fragment_start_third"
+        tools:layout="@layout/fragment_start_third" >
+        <action
+            android:id="@+id/action_startThird_to_gameThird"
+            app:destination="@id/gameThird" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameThird"
+        android:name="com.sunsetgames.bordersecurit.third.GameThird"
+        android:label="fragment_game_third"
+        tools:layout="@layout/fragment_game_third" />
+</navigation>

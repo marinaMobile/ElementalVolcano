@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.ui.Volcano">
+    tools:context=".main.ui.Volcano"
+    android:background="@drawable/back">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/gamesVP"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

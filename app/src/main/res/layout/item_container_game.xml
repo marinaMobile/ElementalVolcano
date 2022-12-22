@@ -7,8 +7,8 @@
     android:clickable="true"
     android:focusable="true"
     app:cardElevation="3dp"
-    android:backgroundTint="#EADF7E"
-    app:cardCornerRadius="8dp">
+    android:backgroundTint="#A6271E"
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+
             android:src="@drawable/roul"/>
 
         <TextView
@@ -34,7 +35,9 @@
             app:layout_constraintTop_toBottomOf="@id/imageGame"
             android:text="First Game"
             android:layout_marginTop="8dp"
-            android:textSize="24sp"
+            android:textSize="32sp"
+            android:fontFamily="@font/jost_bold"
+            android:gravity="center"
             android:textStyle="bold"/>
 
         <TextView
@@ -43,8 +46,12 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/titleGame"
             android:text="First Game"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_regular"
             android:layout_marginTop="8dp"
-            android:textSize="16sp" />
+            android:textSize="24sp" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
