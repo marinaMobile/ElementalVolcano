@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="?android:dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    android:weightSum="3">
+
+    <ImageView
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="0dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/jost_bold"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/description"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/jost_bold"
+        android:textSize="32dp"
+        android:divider="?android:dividerHorizontal"
+        android:gravity="center"
+        android:text="@string/price"
+        android:textColor="@color/white" />
+</LinearLayout>

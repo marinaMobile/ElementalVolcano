@@ -90,4 +90,6 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.3"
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
 
+    implementation 'io.qonversion.android.sdk:sdk:3.+'
+
 }
