@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="400dp"
-        android:layoutDirection="ltr"
+        android:layout_height="500dp"
        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="32">
         <activity
+            android:name=".sh.ShopActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".main.ui.Volcano"
             android:exported="false">
             <meta-data
@@ -41,9 +48,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".second.StartSecScr"
-            android:exported="false"/>
-
+        <activity
+            android:name=".second.StartSecScr"
+            android:exported="false" />
         <activity
             android:name=".second.WinnersAct"
             android:exported="false">
@@ -51,7 +58,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".first.First"
             android:exported="true">

@@ -1,60 +1,89 @@
 package com.sunsetgames.bordersecurit.third
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.sunsetgames.bordersecurit.R
+import com.sunsetgames.bordersecurit.databinding.FragmentGameThirdBinding
+import kotlin.random.Random
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GameThird.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GameThird : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var dddd: FragmentGameThirdBinding? = null
+    private val yyyyy
+        get() = dddd ?: throw RuntimeException("FragmentGameThirdBinding = null")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game_third, container, false)
+    ): View {
+        dddd = FragmentGameThirdBinding.inflate(inflater, container, false)
+        return yyyyy.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GameThird.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GameThird().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        yyyyy.butnRoll.setOnClickListener{
+            rollDice()
+            val dic1 = yyyyy.diceOne
+            val dic2 = yyyyy.diceTwo
+            dic1.startAnimation(AnimationUtils.loadAnimation(activity,R.anim.rotate))
+            dic2.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.rotate))
+
+        }
     }
+
+    fun rollDice() {
+        val randInt = Random.nextInt(6)+1
+        val randIntTwo = Random.nextInt(6)+1
+//        val anim = AnimationUtils.loadAnimation(requireActivity(), R.anim.rotate)
+
+        val drawRes =
+            when (randInt){
+                1 -> R.drawable.dice1
+                2 -> R.drawable.dice2
+                3 -> R.drawable.dice3
+                4 -> R.drawable.dice4
+                5 -> R.drawable.dice5
+                else -> R.drawable.dice6
+        }
+
+        val drawResTwo =
+            when (randIntTwo){
+                1 -> R.drawable.dice1
+                2 -> R.drawable.dice2
+                3 -> R.drawable.dice3
+                4 -> R.drawable.dice4
+                5 -> R.drawable.dice5
+                else -> R.drawable.dice6
+            }
+
+        yyyyy.diceOne.setImageResource(drawRes)
+        yyyyy.diceTwo.setImageResource(drawResTwo)
+
+
+        val sum = randInt+randIntTwo
+
+        if(sum == 7|| sum == 11) {
+            Toast.makeText(requireActivity(), sum.toString(), Toast.LENGTH_SHORT).show()
+        } else if (sum == 2|| sum == 3 || sum == 12) {
+            Toast.makeText(requireActivity(), sum.toString(), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireActivity(), sum.toString(), Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

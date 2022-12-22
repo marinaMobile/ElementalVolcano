@@ -14,6 +14,7 @@ import com.sunsetgames.bordersecurit.first.First
 import com.sunsetgames.bordersecurit.main.util.GameAdapter
 import com.sunsetgames.bordersecurit.main.util.GameClass
 import com.sunsetgames.bordersecurit.second.StartSecScr
+import com.sunsetgames.bordersecurit.sh.ShopActivity
 import com.sunsetgames.bordersecurit.third.Third
 
 
@@ -47,6 +48,7 @@ class Volcano : AppCompatActivity() {
                     0 -> startActivity(Intent(this@Volcano, First::class.java))
                     1 -> startActivity(Intent(this@Volcano, StartSecScr::class.java))
                     2 -> startActivity(Intent(this@Volcano, Third::class.java))
+                    3 -> startActivity(Intent(this@Volcano, ShopActivity::class.java))
                 }
             }
         }
@@ -61,6 +63,7 @@ class Volcano : AppCompatActivity() {
                     0 -> cont = 0
                     1 -> cont = 1
                     2 -> cont = 2
+                    3 -> cont = 3
                 }
                 Log.e("Selected_Page", position.toString())
             }
@@ -89,7 +92,12 @@ class Volcano : AppCompatActivity() {
         third.category = "Dice Game"
         third.poster = R.drawable.diceback
 
-        games = arrayListOf(first, second, third)
+        val forth = GameClass()
+        forth.name = "Shop"
+        forth.category = "Boost your diamond points"
+        forth.poster = R.drawable.diam
+
+        games = arrayListOf(first, second, third, forth)
 
         return games
     }
