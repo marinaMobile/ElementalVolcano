@@ -19,12 +19,6 @@ class GameThird : Fragment() {
     private val yyyyy
         get() = dddd ?: throw RuntimeException("FragmentGameThirdBinding = null")
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
