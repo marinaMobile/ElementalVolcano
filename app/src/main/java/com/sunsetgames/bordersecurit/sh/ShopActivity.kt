@@ -53,30 +53,25 @@ class ShopActivity : AppCompatActivity() {
             QonversionPermissionsCallback {
             override fun onSuccess(entitlements: Map<String, QPermission>) {
                 Toast.makeText(this@ShopActivity, "Purchase succeeded", Toast.LENGTH_LONG).show()
-                if (product.qonversionID == "coin_offer_s") {
+                if (product.qonversionID == "clover_bundle_small") {
 //                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
 //                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
 //                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 200)
 //                        .apply()
                 }
-                if (product.qonversionID == "coin_offer_m") {
+                if (product.qonversionID == "clover_bundle_medium") {
 //                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
 //                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
 //                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 600)
 //                        .apply()
                 }
-                if (product.qonversionID == "coin_offer_l") {
+                if (product.qonversionID == "clover_bundle_big") {
 //                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
 //                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
 //                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 1200)
 //                        .apply()
                 }
-                if (product.qonversionID == "coin_offer_xl") {
-//                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-//                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
-//                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 2500)
-//                        .apply()
-                }
+
             }
 
             override fun onError(error: QonversionError) {

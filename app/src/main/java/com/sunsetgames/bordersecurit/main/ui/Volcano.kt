@@ -3,12 +3,14 @@ package com.sunsetgames.bordersecurit.main.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
+import com.sunsetgames.bordersecurit.ApplCla
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.first.First
 import com.sunsetgames.bordersecurit.main.util.GameAdapter
@@ -20,7 +22,10 @@ import me.relex.circleindicator.CircleIndicator3
 
 
 class Volcano : AppCompatActivity() {
+
+
     var cont: Int = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +33,11 @@ class Volcano : AppCompatActivity() {
         setContentView(R.layout.activity_volcano)
 
         setUpGamesPager()
+        val totalBalanceSP = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
+        var tBalanceMain: Int? = totalBalanceSP.getInt(ApplCla.BALANCE_VOLCANOS.toString(), 0)
+        val balanceScreenText = findViewById<TextView>(R.id.balance)
+
+        balanceScreenText.text = tBalanceMain.toString()
 
 
     }

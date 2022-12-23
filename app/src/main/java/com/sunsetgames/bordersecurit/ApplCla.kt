@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.my.tracker.MyTracker
 import com.onesignal.OneSignal
+import com.qonversion.android.sdk.Qonversion
 import com.sunsetgames.bordersecurit.main.di.appModule
 import com.sunsetgames.bordersecurit.main.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -25,6 +26,7 @@ class ApplCla: Application() {
         val appsCheckChe: String = "appsCheckChe"
         val geoCo: String = "geoCo"
         val userCo: String = "userCo"
+        var BALANCE_VOLCANOS = 3499
     }
 
 
@@ -45,6 +47,10 @@ class ApplCla: Application() {
             shP.edit().putString(myId, IDIN).apply()
             shP.edit().putString(instId, instID).apply()
             settings.edit().putBoolean("my_first_time", false).apply()
+
+            val balance_sp = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
+            balance_sp.edit().putInt(BALANCE_VOLCANOS.toString(),3499).apply()
+
         } else {
             val shIDIN = shP.getString(myId, IDIN)
             trackerParams.setCustomUserId(shIDIN)
@@ -64,6 +70,10 @@ class ApplCla: Application() {
         // OneSignal Initialization
         OneSignal.initWithContext(this)
         OneSignal.setAppId(ONESIGNAL_APP_ID)
+
+        Qonversion.setDebugMode()
+        Qonversion.launch(this, "fMOlxDGSPwLU_BpeCQXo1tIR5cNqfsk-", false)
+
     }
 
 }

@@ -22,6 +22,8 @@ class Second : AppCompatActivity() {
     var totalBalance: Int? = 0
     private var winRes = 0
     private var fisrtImgTimer: CountDownTimer? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         kadsmasdk = ActivitySecondBinding.inflate(layoutInflater)
