@@ -33,6 +33,8 @@ class Volcano : AppCompatActivity() {
         setContentView(R.layout.activity_volcano)
 
         setUpGamesPager()
+
+
         val totalBalanceSP = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
         var tBalanceMain: Int? = totalBalanceSP.getInt(ApplCla.BALANCE_VOLCANOS.toString(), 0)
         val balanceScreenText = findViewById<TextView>(R.id.balance)
@@ -57,10 +59,14 @@ class Volcano : AppCompatActivity() {
             page.scaleY = (0.85f+r*0.15f)
             page.setOnClickListener{
                 when (cont) {
-                    0 -> startActivity(Intent(this@Volcano, First::class.java))
-                    1 -> startActivity(Intent(this@Volcano, StartSecScr::class.java))
-                    2 -> startActivity(Intent(this@Volcano, Third::class.java))
-                    3 -> startActivity(Intent(this@Volcano, ShopActivity::class.java))
+                    0 ->{ startActivity(Intent(this@Volcano, First::class.java))
+                        finish()}
+                    1 ->{ startActivity(Intent(this@Volcano, StartSecScr::class.java))
+                    finish()}
+                    2 -> {startActivity(Intent(this@Volcano, Third::class.java))
+                        finish()}
+                    3 -> {startActivity(Intent(this@Volcano, ShopActivity::class.java))
+                        finish()}
                 }
             }
         }
