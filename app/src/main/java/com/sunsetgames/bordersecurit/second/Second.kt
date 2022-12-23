@@ -9,6 +9,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.view.View
 import android.widget.Toast
+import com.sunsetgames.bordersecurit.ApplCla.Companion.BALANCE_VOLCANOS
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.databinding.ActivitySecondBinding
 import kotlin.random.Random
@@ -24,12 +25,14 @@ class Second : AppCompatActivity() {
     private var fisrtImgTimer: CountDownTimer? = null
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         kadsmasdk = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(kadsmasdk.root)
+//        var TOTAL_BALANCE =
         totalSharedPref = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-        totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 1000)
+        totalBalance = totalSharedPref.getInt(BALANCE_VOLCANOS.toString(), 1000)
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val def_txt_win = sharedPreference.getInt("win_res",winRes)
         kadsmasdk.tvSecWin.text = "Your win : $def_txt_win"
@@ -44,12 +47,12 @@ class Second : AppCompatActivity() {
                         if(countBet<=totalBalance!!){
                             totalBalance = totalBalance!!.minus(countBet)
                             kadsmasdk.tvSecBlnce.text = "Your balance : $totalBalance"
-                            totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                            totalSharedPref.edit().putInt(BALANCE_VOLCANOS.toString(), totalBalance!!).apply()
 
                             if(totalBalance!!<0){
                                 totalBalance = 0
                                 kadsmasdk.tvSecBlnce.text = "Your balance : $totalBalance"
-                                totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                                totalSharedPref.edit().putInt(BALANCE_VOLCANOS.toString(), totalBalance!!).apply()
                             }
                             firstLaucnhImg()
                         } else {
@@ -176,7 +179,7 @@ class Second : AppCompatActivity() {
         fisrtImgTimer?.cancel()
     }
 
-    companion object{
-        var TOTAL_BALANCE = 1000
-    }
+//    companion object{
+//        var TOTAL_BALANCE = 1000
+//    }
 }
