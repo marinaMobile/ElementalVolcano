@@ -42,10 +42,10 @@ class BalanceFragment : Fragment() {
         try {
 
             val totalBalanceSP = requireActivity().getSharedPreferences(
-                "TOTAL_BAL_SP",
+                First.MAIN_KEY_SHARED_PREF_BALANVE,
                 Context.MODE_PRIVATE
             )
-            totalBalance = totalBalanceSP.getInt(First.key_balance, 500)
+            totalBalance = totalBalanceSP.getInt(First.key_balance, 1000)
 
             yyyyy.tvUserBalance.text = totalBalance.toString()
             yyyyy.lottieNext.setOnClickListener {

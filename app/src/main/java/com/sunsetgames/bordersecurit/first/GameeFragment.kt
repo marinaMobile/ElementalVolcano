@@ -81,10 +81,10 @@ class GameeFragment : Fragment() {
             mmmmm()
 
             val totalBalanceSP = requireActivity().getSharedPreferences(
-                "TOTAL_BAL_SP",
+                First.MAIN_KEY_SHARED_PREF_BALANVE,
                 Context.MODE_PRIVATE
             )
-            totalBalance = totalBalanceSP.getInt(First.key_balance, 500)
+            totalBalance = totalBalanceSP.getInt(First.key_balance, 1000)
             userBet = totalBalanceSP.getInt(First.key_bet, 100)
             yyyyy.tvUserPointsCount.text = userPoints.toString()
 

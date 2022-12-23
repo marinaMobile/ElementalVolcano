@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.sunsetgames.bordersecurit.ApplCla
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.databinding.ActivityFirstBinding
 
@@ -14,8 +15,9 @@ class First : AppCompatActivity() {
     lateinit var bindinggg: ActivityFirstBinding
 
     companion object{
-        val key_balance = "1"
+        val key_balance = ApplCla.BALANCE_VOLCANOS.toString()
         val key_bet = "55"
+        val MAIN_KEY_SHARED_PREF_BALANVE = "TOTAL_BAL_SP"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
