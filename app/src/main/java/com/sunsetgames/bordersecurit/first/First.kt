@@ -17,7 +17,7 @@ class First : AppCompatActivity() {
     companion object{
         val key_balance = ApplCla.BALANCE_VOLCANOS.toString()
         val key_bet = "55"
-        val MAIN_KEY_SHARED_PREF_BALANVE = "TOTAL_BAL_SP"
+        val MAIN_KEY_SHARED_PREF_BALANVE = "VOLCANO_BAL_SP"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
