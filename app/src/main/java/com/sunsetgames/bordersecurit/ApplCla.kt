@@ -33,7 +33,7 @@ class ApplCla: Application() {
     override fun onCreate() {
 
         super.onCreate()
-        val shP = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val shP = getSharedPreferences("default", Context.MODE_PRIVATE)
         val settings = getSharedPreferences("PREFS_NAME", 0)
 
         val trackerParams = MyTracker.getTrackerParams()
