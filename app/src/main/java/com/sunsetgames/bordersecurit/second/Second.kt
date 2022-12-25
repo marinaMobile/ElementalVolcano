@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.databinding.ActivitySecondBinding
+import com.sunsetgames.bordersecurit.main.ui.Volcano
 import kotlin.random.Random
 
 class Second : AppCompatActivity() {
@@ -174,6 +175,13 @@ class Second : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         fisrtImgTimer?.cancel()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, Volcano::class.java))
+        finish()
+
     }
 
 }

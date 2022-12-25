@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.sunsetgames.bordersecurit.ApplCla
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.databinding.ActivityFirstBinding
+import com.sunsetgames.bordersecurit.main.ui.Volcano
 
 class First : AppCompatActivity() {
 
@@ -45,4 +46,12 @@ class First : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, Volcano::class.java))
+        finish()
+
+    }
+
 }

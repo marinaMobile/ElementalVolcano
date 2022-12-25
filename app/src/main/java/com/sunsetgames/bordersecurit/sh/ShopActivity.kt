@@ -12,6 +12,7 @@ import com.qonversion.android.sdk.QonversionPermissionsCallback
 import com.qonversion.android.sdk.dto.QPermission
 import com.qonversion.android.sdk.dto.offerings.QOfferings
 import com.qonversion.android.sdk.dto.products.QProduct
+import com.sunsetgames.bordersecurit.ApplCla
 import com.sunsetgames.bordersecurit.R
 import com.sunsetgames.bordersecurit.databinding.ActivityShopBinding
 
@@ -54,22 +55,22 @@ class ShopActivity : AppCompatActivity() {
             override fun onSuccess(entitlements: Map<String, QPermission>) {
                 Toast.makeText(this@ShopActivity, "Purchase succeeded", Toast.LENGTH_LONG).show()
                 if (product.qonversionID == "clover_bundle_small") {
-//                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-//                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
-//                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 200)
-//                        .apply()
+                    val totalBalanceSP = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(ApplCla.BALANCE_VOLCANOS.toString(), 0)
+                    totalBalanceSP.edit().putInt(ApplCla.BALANCE_VOLCANOS.toString(), totalB + 499)
+                        .apply()
                 }
                 if (product.qonversionID == "clover_bundle_medium") {
-//                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-//                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
-//                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 600)
-//                        .apply()
+                    val totalBalanceSP = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(ApplCla.BALANCE_VOLCANOS.toString(), 0)
+                    totalBalanceSP.edit().putInt(ApplCla.BALANCE_VOLCANOS.toString(), totalB + 2999)
+                        .apply()
                 }
                 if (product.qonversionID == "clover_bundle_big") {
-//                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-//                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
-//                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB + 1200)
-//                        .apply()
+                    val totalBalanceSP = getSharedPreferences("VOLCANO_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(ApplCla.BALANCE_VOLCANOS.toString(), 0)
+                    totalBalanceSP.edit().putInt(ApplCla.BALANCE_VOLCANOS.toString(), totalB + 9999)
+                        .apply()
                 }
 
             }

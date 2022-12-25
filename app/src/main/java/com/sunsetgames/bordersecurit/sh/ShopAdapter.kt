@@ -38,7 +38,7 @@ class ShopAdapter(private val products: List<QProduct>,
         }
 
         fun bind(product: QProduct) = with(itemView) {
-            binding.txtName.setImageResource(R.drawable.four)
+            binding.txtName.setImageResource(R.drawable.diamond)
             binding.txtDescription.text = product.skuDetail?.description
             binding.txtPrice.text = product.skuDetail?.price
         }

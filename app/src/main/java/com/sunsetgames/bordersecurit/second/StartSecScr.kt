@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sunsetgames.bordersecurit.databinding.ActivityStartSecScrBinding
+import com.sunsetgames.bordersecurit.main.ui.Volcano
 
 class StartSecScr : AppCompatActivity() {
     private lateinit var skdkms : ActivityStartSecScrBinding
@@ -25,4 +26,12 @@ class StartSecScr : AppCompatActivity() {
             startActivity(Intent(this,WinnersAct::class.java))
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, Volcano::class.java))
+        finish()
+
+    }
+
 }
